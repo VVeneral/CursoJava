@@ -1,0 +1,42 @@
+[][][][][]  MODIFICADORES DE ACESSO  [][][][][]
+
+public -> Em qualquer lugar.
+private ->  Só na própria classe.
+protected -> na própria clase, no mesmo pacote, e em subclasses(mesmo em pacotes diferentes)
+default(Sem modificador) -> Na própria classe e em qualquer classe do mesmo pacote.
+
+O que são getters e setters?
+
+Getter: Método para obter(pegar) valor de uma variável membro.
+Setter: Método para definit(mudar) o valor de uma variável membro.
+
+Por que usar:
+Permite que acesso e mudança individual de cada informação, dando mais controle sobreos dados.
+
+Permite:
+Difinir ou mudar a variável nome ou sálario do método funcionario usando setter.
+Obter apenas o nome ou sálario ussando o getter.
+
+Passagem por valor:
+Todo argumento é passado pro vaor.
+    Primitivos(int, double, boolean) O valor é copiado. Alterar dentro do método
+    não afeta a varável oroginal.
+
+    void dobrar(int x) {
+        x = x * 2; // só muda a cópia
+    }
+
+    int n = 5;
+    dobrar(n);
+    System.out.println(n); // ainda 5
+
+resumo: o meotdo dobrar não afeta o n, pois o n é o original.
+
+
+
+
+
+
+
+
+

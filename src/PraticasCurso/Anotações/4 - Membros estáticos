@@ -1,0 +1,118 @@
+[][][][][]  MEMBROS ESTÁTICOS  [][][][][]
+
+No java, membros estáticos (static) pertencem a classe, e não as objetos criados a partir dela.
+Sem static, cada objeto tem sua própria cópia da variável ou metodo.
+Com static, existe apenas uma cópia compartilhada por todos os objetos.
+
+Ex 1: Variável comum, sem static.
+    public class Pessoa {
+        String nome;
+    }
+
+    Pessoa p1 = new Pessoa();
+    Pessoa p2 = new Pessoa();
+
+    p1.nome = "João";
+    p2.nome = "Maria";
+
+    System.out.println(p1.nome); // João
+    System.out.println(p2.nome); // Maria
+
+Cada objeto possui seu proprio valor nome.
+
+------------------------------------------------------------
+
+Ex 2: Variável estatic
+Imagine que queremos contar quantas pessoas foram criadas.
+
+    public static Pessoa {
+        static int contador = 0;
+
+        public Pessoa() {
+            contador++;
+        }
+    }
+
+    Pessoa p1 = new Pessoa();
+    Pessoa p2 = new Pessoa();
+    Pessoa p3 = new Pessoa();
+
+    System.out.println(Pessoa.contador);
+
+    SAIDA: 3
+
+------------------------------------------------------------
+
+O contador é compartilhado por todos os objetos.
+Visualmente fica assim:
+
+Classe Pessoa
+└── contador = 3
+objeto p1
+objeto p2
+objeto p3
+
+------------------------------------------------------------
+
+Ex 3: Método estático
+métodos estáticos podem ser chamados sem criar objetos.
+
+    public class Calculadora {
+
+        public static int somar (int a, int b) {
+            return a + b;
+        }
+    }
+
+Uso:
+
+int resultado = Calculadora.somar(10, 15);
+System.out.println(resultado);
+
+SAIDA: 35
+
+------------------------------------------------------------
+
+Ex 4: O main é estático
+
+    public static void main(String[] args) {
+        System.out.println("Olá");
+    }
+
+O java precisa executar o método main antes de existir qualquer objeto, por isso ele é static.
+
+------------------------------------------------------------
+
+REGRA IMPORTANTE
+
+Um método estático não pode acessar membros não estáticos diretamente.
+
+ERRADO:
+    public class Teste {
+
+        String nome = "Vini";
+
+        public static void mostrar() {
+            System.out.println(nome);  // ERRO
+        }
+    }
+
+Porque nome pertence a um objeto, e o método estático pertence à classe.
+
+CORRETO:
+    public static Teste {
+
+    static String nome = "Kelly";
+
+    public static void mostrar() {
+        System.out.println(nome);
+    }
+}
+
+------------------------------------------------------------
+
+Uma forma simples de lembrar:
+
+Se a informação pertence a cada objeto, não use static.
+
+Se a informação pertence à classe inteira e deve ser compartilhada, use static.

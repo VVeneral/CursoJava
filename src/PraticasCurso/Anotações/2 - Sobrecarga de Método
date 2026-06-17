@@ -1,0 +1,22 @@
+[][][][][]  SOBRECARGA DE MÉTODO  [][][][][]
+
+Capacidade de definir multiplos métodos com o mesmo nome.
+
+    public class Calculadora {
+
+        // Soma dois inteiros
+        public int somar(int a, int b) {
+            return a + b;
+        }
+
+        // Soma três inteiros
+        public int somar(int a, int b, int c) {
+            return a + b + c;
+        }
+
+        // Soma dois doubles
+        public double somar(double a, double b) {
+            return a + b;
+        }
+    }
+O compilador decide qual usar com base no que for compilado.
