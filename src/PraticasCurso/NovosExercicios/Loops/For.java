@@ -3,14 +3,16 @@ package PraticasCurso.NovosExercicios.Loops;
 public class For {
     public static void main(String[] args) {
 
-        // LOOPS: usados para repetir um bloco de código várias vezes.
-        // FOR: repete o loop, acresc entando i, até i atender a condição.
+        // LOOP - FOR: repete o ‘loop’, acrescentando i, até i atender a condição.
         for (int i = 0; i < 5; i++) {
+            if (i == 2) {
+                break;
+            }
             System.out.println(i);
         }
         System.out.println("\n"); // pular linha no terminal
 
-        // Pulando de dois em dois
+        // Pulando a cada dois
         for (int i = 0; i <= 10; i += 2) {
             System.out.println(i);
         }
