@@ -11,9 +11,9 @@ public class ForEach {
             System.out.println("For tradicional: " + numeros[i]);
         }
         // For: controla tudo.
-        // começa com 0
+        // Começa com 0
         // termina em length.
-        // incrementa i.
+        // Incrementa i.
         // acessa [i].
 
         // FOR-EACH
