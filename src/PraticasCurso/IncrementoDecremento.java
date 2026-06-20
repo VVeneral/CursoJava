@@ -1,4 +1,4 @@
-package PraticasCurso.NovosExercicios;
+package PraticasCurso;
 
 public class IncrementoDecremento {
     public static void main(String [] args) {

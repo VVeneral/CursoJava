@@ -1,4 +1,4 @@
-package PraticasCurso.NovosExercicios;
+package PraticasCurso;
 
 public class operadoresAtribuicaoExercicio {
     public static void main(String [] args) {

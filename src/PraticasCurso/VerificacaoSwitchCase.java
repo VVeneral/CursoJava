@@ -1,4 +1,4 @@
-package PraticasCurso.NovosExercicios;
+package PraticasCurso;
 
 public class VerificacaoSwitchCase {
     public static void main(String[] args) {

@@ -9,6 +9,11 @@ public class Funcionario {
         nome = nomeInit;
         salario = salarioInit;
     }
+
+    public Funcionario() {
+
+    }
+
     public String obterInfo() {
         return "Nome: " + nome + "\nSalario: " + salario;
     }

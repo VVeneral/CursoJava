@@ -1,7 +1,5 @@
 package PraticasCurso.NovosExercicios.Arrays.Exercicios;
 
-import java.util.Arrays;
-
 public class SomaDeNumeros {
     public static void main(String[] args) {
 

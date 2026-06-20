@@ -1,4 +1,4 @@
-package PraticasCurso.NovosExercicios;
+package PraticasCurso.NovosExercicios.Loops.Exercicios;
 
 public class PraticasLoops {
     public static void main(String[] args) {

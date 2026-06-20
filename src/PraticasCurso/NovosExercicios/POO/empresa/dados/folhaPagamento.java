@@ -1,7 +1,5 @@
 package PraticasCurso.NovosExercicios.POO.empresa.dados;
 
-import PraticasCurso.NovosExercicios.POO.empresa.dados.Funcionario;
-
 // Praticas sobre pacotes.
 
 public class folhaPagamento {
