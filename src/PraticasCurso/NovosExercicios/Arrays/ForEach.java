@@ -8,9 +8,9 @@ public class ForEach {
         // FOR TRADICIONAL
         int[] numeros = {1, 2, 3, 4, 5};
         for (int i = 0; i < numeros.length; i++) {
-            System.out.println("For tradicional: " + numeros[i]);
+            System.out.println("ExemploFor tradicional: " + numeros[i]);
         }
-        // For: controla tudo.
+        // ExemploFor: controla tudo.
         // Começa com 0
         // termina em length.
         // Incrementa i.
@@ -20,7 +20,7 @@ public class ForEach {
         System.out.println("\n");
 
         for (int numero : numeros) {
-            System.out.println("For-each: " + numero);
+            System.out.println("ExemploFor-each: " + numero);
         }
         // COMO SE LÊ: Para cada "numero" dentro de "numeros", faça...
         // primeira volta: 1

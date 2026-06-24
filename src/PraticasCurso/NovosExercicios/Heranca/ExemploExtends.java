@@ -24,34 +24,56 @@ package PraticasCurso.NovosExercicios.Heranca;
 *
 */
 
-public class ExemploExtends {
-    static class SerHumano {
-        String nome;
-        int idade;
-        String sexo;
+class SerHumano {
+    String nome;
+    int idade;
+    String sexo;
 
-        public void dormir() {
+    public void dormir(){
             System.out.println("Dormindo...");
         }
-    }
+}
 
-    static class Funcionario extends SerHumano {
-        Double salario;
-        int registro;
-        String cargo;
+class Funcionario extends SerHumano {
+    Double salario;
+    int registro;
+    String cargo;
 
-        public void trabalhar() {
+    public void trabalhar() {
             System.out.println("Trabalhando...");
         }
         public String obterInfoFunc() {
-            return "Funcionario: " + nome
-                + "\nIdade: " + idade
-                + "\nSexo: " + sexo
-                + "\nCargo: " + cargo
-                + "\nRegistro: " + registro
-                + "\nSalario: " + salario;
+        return "Funcionario: " + nome
+            + "\nIdade: " + idade
+            + "\nSexo: " + sexo
+            + "\nCargo: " + cargo
+            + "\nRegistro: " + registro
+            + "\nSalario: " + salario;
         }
     }
 
+public class ExemploExtends {
+    public static void main(String[] args) {
+
+        Funcionario func1 = new Funcionario();
+        double horarioAtual = 17.30;
+        double horarioInicio = 8;
+        double horarioFinal = 18;
+
+        func1.nome = "Joao";
+        func1.idade = 32;
+        func1.sexo = "Masculino";
+        func1.salario = 4.800;
+        func1.registro = 6;
+        func1.cargo = "Torneiro";
+
+        if (horarioAtual >= horarioInicio && horarioAtual <= horarioFinal) {
+            func1.trabalhar();
+        } else {
+            func1.dormir();
+        }
+
+        System.out.println(func1.obterInfoFunc());
+    }
 }
 

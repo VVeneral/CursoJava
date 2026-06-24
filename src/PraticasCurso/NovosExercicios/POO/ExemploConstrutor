@@ -1,0 +1,45 @@
+package PraticasCurso.NovosExercicios.POO;
+
+/**
+ * CONSTRUTOR
+ *
+ * É um método especial chamado automaticamente quando um objeto é criado.
+ * Sua principal função é inicializar os atributos do objeto.
+ */
+
+class Funcionario {
+   //CLASSE: usada para criar quantos funcionarios quiser.
+    String nome;
+    String cargo;
+    double salario;
+    String turno;
+
+    // CONTRUTOR - Chamado para iniciar um objeto.
+    Funcionario(String nome, String cargo, double salario, String turno) {
+        this.nome = nome; // A palavra this, referencia o nome da classe.
+        this.cargo = cargo;
+        this.salario = salario;
+        this.turno = turno;
+    }
+
+    void exibirDados(){
+        System.out.println("\nNome: " + this.nome);
+        System.out.println("Cargo: " + this.cargo);
+        System.out.println("Salario: " + this.salario);
+        System.out.println("Turno: " + this.turno);
+    }
+}
+
+public class ExemploConstrutor {
+    public static void main(String[] args) {
+
+        Funcionario funcionario = new Funcionario("José", "Pintor", 2800, "Diurno");
+        funcionario.exibirDados();
+
+        Funcionario funcionario2 = new Funcionario("Aline", "Manicure", 7800, "Diurno");
+        funcionario2.exibirDados();
+
+
+    }
+}
+

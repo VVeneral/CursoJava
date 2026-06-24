@@ -1,6 +1,6 @@
 package PraticasCurso.NovosExercicios.Loops;
 
-public class For {
+public class ExemploFor {
     public static void main(String[] args) {
 
         // LOOP - FOR: repete o ‘loop’, acrescentando i, até i atender a condição.

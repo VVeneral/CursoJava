@@ -3,14 +3,14 @@ package PraticasCurso.NovosExercicios.Loops;
 public class ControleDeLoopContinue {
     public static void main(String[] args) {
         // CONTROLE DE LOOP com CONTINUE: Pula a interação atual e vai para a próxima.
-        // Também usado com For, While e Do-While
+        // Também usado com ExemploFor, ExemploWhile e Do-ExemploWhile
         // QUANDO USAR O CONTINUE:
         // - Ignorar valores inválidos.
         // - Pular linhas vazias.
         // - Ignorar pares ou impar.
         // - validar dados antes de processar.
 
-        // For com continue
+        // ExemploFor com continue
         for (int i = 0; i < 10; i++) {
             if (i == 5) {
                 System.out.println(" 5 - Pula interação");
@@ -20,7 +20,7 @@ public class ControleDeLoopContinue {
         }
         System.out.println("\n");
 
-        //While com continue
+        //ExemploWhile com continue
         int j = 1;
         while (j <= 10) {
             if (j == 6) {

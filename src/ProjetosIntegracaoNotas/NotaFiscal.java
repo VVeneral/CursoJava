@@ -2,20 +2,20 @@ package ProjetosIntegracaoNotas;
 
 public class NotaFiscal {
     public String cliente;
-    public int numero;
-    public int serie;
+    public String numero;
+    public String serie;
     public String chaveDeAcesso;
     public String naturezaDaOperacao;
     public String cnpj;
     public double valor;
     public String situacao;
-    public int dataEmissao;
+    public String dataEmissao;
     public int totalNotasFiscais = 0;
 
     public NotaFiscal(
-            String cliente, int numero, int serie, String chaveDeAcesso,
+            String cliente, String numero, String serie, String chaveDeAcesso,
             String naturezaDaOperacao, String cnpj, double valor,
-            String situacao, int dataEmissao) {
+            String situacao, String dataEmissao) {
 
         this.cliente = cliente;
         this.numero = numero;

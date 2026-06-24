@@ -16,16 +16,24 @@ package PraticasCurso.NovosExercicios.Heranca;
 * Permite que cada subclasse tenha um comportamento próprio,
 * mesmo herdando o mesmo método da superclasse.
 */
-public class ExemploSobrescrita {
-    static class Animal {
-        public void fazerSom() {
+
+class Animal {
+    public void fazerSom() {
             System.out.println("Animal emite som...");
         }
-    }
+}
 
-    static class Cachorro extends Animal {
-        public void fazerSom() {
-            System.out.println("Cachorro emite som...");
-        }
+class Cachorro extends Animal {
+    public void fazerSom() {
+        System.out.println("Cachorro emite som...");
     }
 }
+
+public class ExemploSobrescrita extends Cachorro {
+    public static void main(String[] args) {
+        Cachorro bilu = new Cachorro();
+        bilu.fazerSom();
+    }
+}
+
+

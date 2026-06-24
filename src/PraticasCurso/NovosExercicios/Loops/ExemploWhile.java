@@ -1,6 +1,6 @@
 package PraticasCurso.NovosExercicios.Loops;
 
-public class While {
+public class ExemploWhile {
     public static void main(String[] args) {
 
         // LOOP - WHILE: Usado quando não sabe quantas vezes vai repeter.

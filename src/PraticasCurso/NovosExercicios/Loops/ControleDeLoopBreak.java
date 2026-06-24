@@ -3,14 +3,14 @@ package PraticasCurso.NovosExercicios.Loops;
 public class ControleDeLoopBreak {
     public static void main(String[] args) {
         // CONTROLE DE LOOP com BREAK: Palavra que interrompe imediatamente um loop.
-        // Usado com For, While e Do-While
+        // Usado com ExemploFor, ExemploWhile e Do-ExemploWhile
         // QUANDO USAR O BREAK:
         // - Encontrou elemento procurado.
         // - Usuario digitou "sair".
         // - Ocorreu um erro.
         // - Atingiu uma condição especial.
 
-        // For com break
+        // ExemploFor com break
         for (int i = 0; i < 10; i++) {
             if (i == 3) {
                 System.out.println("Break interrompeu");

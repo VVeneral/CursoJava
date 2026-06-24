@@ -3,14 +3,14 @@ package PraticasCurso.NovosExercicios.Loops.Exercicios;
 public class PraticasLoops {
     public static void main(String[] args) {
 
-        // For
+        // ExemploFor
         for (int i = 0; i < 5; i++) {
-            System.out.println("laço For: " + i);
+            System.out.println("laço ExemploFor: " + i);
         }
 
         System.out.println("\n");
 
-        // While
+        // ExemploWhile
         int j = 0;
         while (j < 10) {
             System.out.println("Laço while: " + j);
@@ -45,7 +45,7 @@ public class PraticasLoops {
         }
 
         System.out.println("\n##########  EXERCICIOS - LOOP  ##########\n");
-        // For
+        // ExemploFor
         int soma = 0;
 
         for (int z = 0; z <= 10; z++) {

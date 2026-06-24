@@ -5,26 +5,26 @@ public class Aplicacao {
 
         NotaFiscal notaFiscal1 = new NotaFiscal(
             "Car locações",
-            100123,
-            001,
+            "100123",
+            "001",
             "4126066481573400010155001001001236000250645",
             "VENDA DE MERCADORIA ADIQUIRIDA",
             "64815734000101",
             1500.67,
             "PAGO",
-            20260619
+            "2026-06-19"
         );
 
         NotaFiscal notaFiscal2 = new NotaFiscal(
             "Tubos inotex",
-            100124,
-            001,
+            "100124",
+            "001",
             "4126064604267600014955001001001246000250745",
             "VENDA DE MERCADORIA ADIQUIRIDA",
             "46042676000149",
             2357.15,
             "PAGO",
-            20260619
+            "2026-06-19"
         );
 
         System.out.println(notaFiscal1);
