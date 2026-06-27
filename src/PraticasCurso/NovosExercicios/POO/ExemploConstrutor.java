@@ -22,6 +22,9 @@ class Funcionario {
         this.turno = turno;
     }
 
+    Funcionario() { // Construtor ‘Default’
+    }
+
     void exibirDados(){
         System.out.println("\nNome: " + this.nome);
         System.out.println("Cargo: " + this.cargo);
@@ -39,6 +42,7 @@ public class ExemploConstrutor {
         Funcionario funcionario2 = new Funcionario("Aline", "Manicure", 7800, "Diurno");
         funcionario2.exibirDados();
 
+        Funcionario funcionario3 = new Funcionario(); // Permite criar uma classe vzia, pois tem um construtor 'default' declarado.
 
     }
 }
