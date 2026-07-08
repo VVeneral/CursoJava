@@ -1,5 +1,7 @@
 package ProjetosIntegracaoNotas;
 
+import ProjetosIntegracaoNotas.enums.SituacaoNota;
+
 public class Aplicacao {
     public static void main(String[] args) {
 
@@ -11,7 +13,7 @@ public class Aplicacao {
             "VENDA DE MERCADORIA ADIQUIRIDA",
             "64815734000101",
             1500.67,
-            "PAGO",
+            SituacaoNota.ENVIADA,
             "2026-06-19"
         );
 
@@ -23,7 +25,7 @@ public class Aplicacao {
             "VENDA DE MERCADORIA ADIQUIRIDA",
             "46042676000149",
             2357.15,
-            "PAGO",
+            SituacaoNota.ERRO,
             "2026-06-19"
         );
 
