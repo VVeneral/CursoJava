@@ -6,7 +6,8 @@ public enum SituacaoNota {
     PROCESSANDO,
     INTEGRADA,
     ENVIADA,
+    AUTORIZADA,
+    PAGO,
     ERRO,
     CANCELADA,
-    PAGO,
 }
