@@ -45,7 +45,7 @@ public class Arrays {
         System.out.println(decimais2[2]);
 
     /*
-     TODO ARRAY POSSUI:
+    TODO ARRAY POSSUI:
     - Indices que começam com 0.
     - Tamanho acessado por length.
     */

@@ -1,4 +1,4 @@
-package ProjetosIntegracaoNotas.enums;
+package Projetos.enums;
 
 public enum NaturezaOperacao {
 

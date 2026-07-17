@@ -1,4 +1,4 @@
-package ProjetosIntegracaoNotas.enums;
+package Projetos.enums;
 
 public enum SituacaoNota {
     // STATUS DE PAGAMENTO

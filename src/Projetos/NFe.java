@@ -1,9 +1,7 @@
-package PraticasCurso.NovosExercicios.Heranca.Exercicios;
+package Projetos;
 
-import ProjetosIntegracaoNotas.enums.NaturezaOperacao;
-import ProjetosIntegracaoNotas.enums.SituacaoNota;
-
-import java.time.LocalDate;
+import Projetos.enums.NaturezaOperacao;
+import Projetos.enums.SituacaoNota;
 
 /*
 DocumentoFiscal
@@ -16,6 +14,11 @@ public class NFe extends DocumentoFiscal {
     private String cfop;
     private String serie;
     private String modelo;
+
+    @Override
+    public  void emitir(){
+        System.out.println("Transmitindo NFe para a SEFAZ...");
+    }
 
     public String getProtocoloAutorizacao() {
         if (getStatus() == SituacaoNota.AUTORIZADA) {
