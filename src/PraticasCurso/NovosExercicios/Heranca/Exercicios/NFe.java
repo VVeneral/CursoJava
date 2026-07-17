@@ -17,6 +17,11 @@ public class NFe extends DocumentoFiscal {
     private String serie;
     private String modelo;
 
+    @Override
+    public  void emitir(){
+        System.out.println("Transmitindo NFe para a SEFAZ...");
+    }
+
     public String getProtocoloAutorizacao() {
         if (getStatus() == SituacaoNota.AUTORIZADA) {
             return protocoloAutorizacao;

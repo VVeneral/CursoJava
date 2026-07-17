@@ -16,13 +16,14 @@ DocumentoFiscal
 ├── CTe
 └── MDFe
 */
-public class DocumentoFiscal {
+public abstract class DocumentoFiscal {
     private String numero;
     private String chaveDeAcesso;
     private LocalDate dataEmissao;
     private String destinatario;
     private SituacaoNota status;
     private BigDecimal valorTotal;
+
 
     //GETTER E SETTER
     public String getNumero() {
@@ -94,6 +95,8 @@ public class DocumentoFiscal {
         }
         this.status = status;
     }
+
+    public abstract void emitir();
 
     @Override
     public String toString() {
