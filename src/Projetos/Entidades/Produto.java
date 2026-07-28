@@ -73,7 +73,8 @@ public class Produto {
     }
     @Override
     public String toString() {
-        return "Produto: \n" + "Código: " + codigo + "\n"
+        return "Produto: \n"
+                + "Código: " + codigo + "\n"
                 + "Descrição do Produto: " + descricao + "\n"
                 + "Unidade de medida: " + unidadeMedida + "\n"
                 + "Valor unitário: " + valorUnitario + "\n";

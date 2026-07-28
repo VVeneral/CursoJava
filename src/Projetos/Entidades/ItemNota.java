@@ -1,12 +1,12 @@
 package Projetos.Entidades;
 
+import Projetos.enums.UnidadeMedida;
+
 import java.math.BigDecimal;
 
 public class ItemNota {
     private Produto produto;
     private BigDecimal quantidade;
-    private BigDecimal valorUnitario;
-    private BigDecimal valorTotal;
 
     // GETTER E SETTER
     public Produto getProduto() {
@@ -32,37 +32,17 @@ public class ItemNota {
         this.quantidade = quantidade;
     }
 
-    public BigDecimal getValorUnitario() {
-        return valorUnitario;
-    }
-    public void setValorUnitario(BigDecimal valorUnitario) {
-        if (valorUnitario == null) {
-            throw new IllegalArgumentException("O valor unitário é obrigatório.");
-        }
-        if (valorUnitario.compareTo(BigDecimal.ZERO) <= 0) {
-            throw new IllegalArgumentException("O valor unitário deve ser maior que zero.");
-        }
-        this.valorUnitario = valorUnitario;
-    }
-
-    public BigDecimal getValorTotal() {
-        return valorTotal;
-    }
-    public void setValorTotal(BigDecimal valorTotal) {
-        if (valorTotal == null) {
-            throw new IllegalArgumentException("O valor total é obrigatório.");
-        }
-        if (valorTotal.compareTo(BigDecimal.ZERO) <= 0) {
-            throw new IllegalArgumentException("O valor total deve ser maior que zero.");
-        }
-        this.valorTotal = valorTotal;
+    public BigDecimal calcularValorTotal() {
+        return quantidade.multiply( produto.getValorUnitario());
     }
 
     @Override
     public String toString() {
-        return "Item Nota: \n" + produto.toString() + "\n"
-                + "Quantidade: " + quantidade + "\n"
-                + "Valor unitário: " + valorUnitario + "\n"
-                + "Valor total: " + valorTotal + "\n";
+        return "Item da Nota: \n"
+                + "Código: " + produto.getCodigo() + "\n"
+                + "Descrição: " + produto.getDescricao() + "\n"
+                + "Quantidade: " + quantidade + " " + produto.getUnidadeMedida() + "\n"
+                + "Valor unitário: " + produto.getValorUnitario() + "\n"
+                + "Valor total: " + calcularValorTotal() + "\n";
     }
 }

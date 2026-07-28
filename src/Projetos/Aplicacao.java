@@ -4,8 +4,7 @@ import Projetos.Entidades.Cliente;
 import Projetos.Entidades.Endereco;
 import Projetos.Entidades.ItemNota;
 import Projetos.Entidades.Produto;
-import Projetos.enums.Uf;
-import Projetos.enums.UnidadeMedida;
+import Projetos.enums.*;
 
 import java.math.BigDecimal;
 
@@ -16,6 +15,7 @@ public class Aplicacao {
         Endereco endereco = new Endereco();
         Produto produto = new Produto();
         ItemNota itemNota = new ItemNota();
+        NFe nfe = new NFe();
 
         // Endereco
         endereco.setLogradouro("Rua max sheidemantel");
@@ -32,16 +32,21 @@ public class Aplicacao {
         produto.setCodigo("123456fg");
         produto.setDescricao("Arroz tio joão 5kg");
         produto.setUnidadeMedida(UnidadeMedida.PCT);
-        produto.setValorUnitario(new BigDecimal("100"));
+        produto.setValorUnitario(new BigDecimal("21.99"));
         // ItemNota
         itemNota.setProduto(produto);
         itemNota.setQuantidade(new BigDecimal("10"));
-        itemNota.setValorUnitario(new BigDecimal("15.99"));
-        itemNota.setValorTotal(new BigDecimal("159.99"));
+        itemNota.getProduto().getValorUnitario();
+        //NFe
+        nfe.setProtocoloAutorizacao("autorizado");
+        nfe.setNaturezaOperacao(NaturezaOperacao.BONIFICACAO);
+        nfe.setDestinatario(cliente);
+        nfe.setCfop(Cfop.COMPRA_COMERCIALIZACAO_DENTRO_ESTADO);
+        nfe.setSerie("214");
+        nfe.setModelo(ModeloDocumento.NFE);
 
-        System.out.println(produto);
-        System.out.println(cliente);
-        System.out.println(itemNota);
+
+        System.out.println(nfe);
 
     }
 }
