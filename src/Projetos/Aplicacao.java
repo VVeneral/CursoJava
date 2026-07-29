@@ -7,6 +7,8 @@ import Projetos.Entidades.Produto;
 import Projetos.enums.*;
 
 import java.math.BigDecimal;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Aplicacao {
     public static void main(String[] args) {
@@ -39,12 +41,13 @@ public class Aplicacao {
         itemNota.getProduto().getValorUnitario();
         //NFe
         nfe.setProtocoloAutorizacao("autorizado");
-        nfe.setNaturezaOperacao(NaturezaOperacao.BONIFICACAO);
+        nfe.setNaturezaOperacao(NaturezaOperacao.VENDA);
         nfe.setDestinatario(cliente);
         nfe.setCfop(Cfop.COMPRA_COMERCIALIZACAO_DENTRO_ESTADO);
         nfe.setSerie("214");
         nfe.setModelo(ModeloDocumento.NFE);
-
+        // Lista
+        nfe.adicionarItem(itemNota);
 
         System.out.println(nfe);
 

@@ -1,9 +1,12 @@
 package Projetos;
 
 import Projetos.Entidades.Cliente;
+import Projetos.Entidades.ItemNota;
 import Projetos.enums.*;
 import Projetos.Entidades.Endereco;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Locale;
 
 /*
@@ -17,6 +20,8 @@ public class NFe extends DocumentoFiscal {
     private Cfop cfop;
     private String serie;
     private ModeloDocumento modelo;
+
+    private List<ItemNota> itens = new ArrayList<>();
 
     @Override
     public  void emitir(){
@@ -98,13 +103,34 @@ public class NFe extends DocumentoFiscal {
         this.modelo = modelo;
     }
 
+    public void adicionarItem(ItemNota item) {
+        itens.add(item);
+    }
+
     @Override
     public String toString() {
-        return "Protocolo de Autortização: " + protocoloAutorizacao.toUpperCase() + "\n"
-            + "Natureza da Operação: " + naturezaOperacao.getCodigo() + " - " + naturezaOperacao.getDescricao()  + "\n"
-            + "Define Cfop: " + definirCfop().getCodigo() + " - " + definirCfop().getDescricao() + "\n"
-            + "Cfop: " + cfop.getCodigo() + " - " + cfop.getDescricao() + "\n"
-            + "Série: " + serie + "\n"
-            + "Modelo: " + modelo.getCodigo() + "\n";
+
+        StringBuilder infoNfe = new StringBuilder();
+
+        infoNfe.append("Protocolo de Autortização: ").append(protocoloAutorizacao.toUpperCase() + "\n");
+        infoNfe.append("Natureza da Operação: ").append(naturezaOperacao.getCodigo())
+                .append(" - ").append(naturezaOperacao.getDescricao() + "\n");
+        infoNfe.append("CFOP: ").append(cfop.getCodigo() + " - " + cfop.getDescricao() + "\n");
+        infoNfe.append("Série: ").append(serie + "\n");
+        infoNfe.append("Modelo: ").append(modelo.getCodigo() + "\n");
+        infoNfe.append("\nItem da Nota: \n");
+
+        for ( ItemNota itemNota : itens) {
+            infoNfe.append("Descrição do Produto: ")
+                    .append(itemNota.getProduto().getDescricao() + "\n");
+            infoNfe.append("Valor Unitário: ")
+                    .append(itemNota.getProduto().getValorUnitario() + "\n");
+            infoNfe.append("Quantidade: ")
+                    .append(itemNota.getQuantidade() + "\n");
+            infoNfe.append("Valor Total: ")
+                    .append(itemNota.calcularValorTotal() + "\n");
+        }
+
+        return infoNfe.toString();
     }
 }
