@@ -118,8 +118,8 @@ public class NFe extends DocumentoFiscal {
         infoNfe.append("CFOP: ").append(cfop.getCodigo() + " - " + cfop.getDescricao() + "\n");
         infoNfe.append("Série: ").append(serie + "\n");
         infoNfe.append("Modelo: ").append(modelo.getCodigo() + "\n");
-        infoNfe.append("\nItem da Nota: \n");
-
+        
+        infoNfe.append("\n----------  Item da Nota:  ---------\n");
         for ( ItemNota itemNota : itens) {
             infoNfe.append("Descrição do Produto: ")
                     .append(itemNota.getProduto().getDescricao() + "\n");
