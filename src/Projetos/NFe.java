@@ -5,6 +5,7 @@ import Projetos.Entidades.ItemNota;
 import Projetos.enums.*;
 import Projetos.Entidades.Endereco;
 
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
@@ -107,29 +108,50 @@ public class NFe extends DocumentoFiscal {
         itens.add(item);
     }
 
+    public int quantidadeItens() {
+        return itens.size();
+    }
+
+
+    public BigDecimal calcularValorTotal() {
+
+        BigDecimal valorTotalNota = BigDecimal.ZERO;
+
+        for (ItemNota itemNota : itens) {
+            valorTotalNota = valorTotalNota.add(itemNota.calcularValorTotal());
+        }
+            return valorTotalNota;
+    }
+
     @Override
     public String toString() {
 
         StringBuilder infoNfe = new StringBuilder();
+        int contador = 1;
 
-        infoNfe.append("Protocolo de Autortização: ").append(protocoloAutorizacao.toUpperCase() + "\n");
+        infoNfe.append("\nProtocolo de Autortização: ").append(protocoloAutorizacao.toUpperCase()).append("\n");
         infoNfe.append("Natureza da Operação: ").append(naturezaOperacao.getCodigo())
-                .append(" - ").append(naturezaOperacao.getDescricao() + "\n");
-        infoNfe.append("CFOP: ").append(cfop.getCodigo() + " - " + cfop.getDescricao() + "\n");
-        infoNfe.append("Série: ").append(serie + "\n");
-        infoNfe.append("Modelo: ").append(modelo.getCodigo() + "\n");
-        
-        infoNfe.append("\n----------  Item da Nota:  ---------\n");
+                .append(" - ").append(naturezaOperacao.getDescricao()).append("\n");
+        infoNfe.append("CFOP: ").append(cfop.getCodigo()).append(" - ").append(cfop.getDescricao()).append("\n");
+        infoNfe.append("Série: ").append(serie).append("\n");
+        infoNfe.append("Modelo: ").append(modelo.getCodigo()).append("\n");
         for ( ItemNota itemNota : itens) {
+            infoNfe.append("\n----------  Item ").append(contador).append("  ----------\n");
             infoNfe.append("Descrição do Produto: ")
-                    .append(itemNota.getProduto().getDescricao() + "\n");
+                    .append(itemNota.getProduto().getDescricao()).append("\n");
             infoNfe.append("Valor Unitário: ")
-                    .append(itemNota.getProduto().getValorUnitario() + "\n");
+                    .append(itemNota.getProduto().getValorUnitario()).append("\n");
             infoNfe.append("Quantidade: ")
-                    .append(itemNota.getQuantidade() + "\n");
+                    .append(itemNota.getQuantidade()).append("\n");
             infoNfe.append("Valor Total: ")
-                    .append(itemNota.calcularValorTotal() + "\n");
+                    .append(itemNota.calcularValorTotal()).append("\n");
+
+            contador++;
         }
+        infoNfe.append("\n--------------------------------");
+        infoNfe.append("\nQuantidade de itens na nota: ").append(quantidadeItens());
+        infoNfe.append("\n--------------------------------");
+        infoNfe.append("\nValor total da nota: R$ ").append(calcularValorTotal());
 
         return infoNfe.toString();
     }
