@@ -1,14 +1,11 @@
 package Projetos;
 
-import Projetos.Entidades.Cliente;
 import Projetos.Entidades.ItemNota;
 import Projetos.enums.*;
-import Projetos.Entidades.Endereco;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Locale;
 
 /*
 DocumentoFiscal
@@ -114,13 +111,43 @@ public class NFe extends DocumentoFiscal {
 
 
     public BigDecimal calcularValorTotal() {
-
         BigDecimal valorTotalNota = BigDecimal.ZERO;
 
         for (ItemNota itemNota : itens) {
             valorTotalNota = valorTotalNota.add(itemNota.calcularValorTotal());
         }
             return valorTotalNota;
+    }
+
+    public void removerItem(ItemNota item) {
+        itens.remove(item);
+    }
+
+    public ItemNota removerItemPorCodigo(String codigo) {
+        ItemNota nota = buscaItemPorCodigo(codigo);
+
+        if (nota != null) {
+            removerItem(nota);
+        }
+        return nota;
+    }
+
+    public ItemNota buscaItemPorCodigo(String codigo) {
+        for (ItemNota itemNota : itens) {
+            if (itemNota.getProduto().getCodigo().equals(codigo.toUpperCase())) {
+                return itemNota;
+            }
+        }
+        return null;
+    }
+
+    public ItemNota alterarQuantidadePorCodigo(String codigo, BigDecimal novaQuantidade) {
+        ItemNota nota = buscaItemPorCodigo(codigo);
+
+        if (nota != null) {
+            nota.setQuantidade(novaQuantidade);
+        }
+        return nota;
     }
 
     @Override

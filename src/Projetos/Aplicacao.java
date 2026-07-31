@@ -39,7 +39,7 @@ public class Aplicacao {
 
         // ITEM 1
         //Produto
-        produto.setCodigo("123456fg");
+        produto.setCodigo("abcd1000");
         produto.setDescricao("Arroz tio joão 5kg");
         produto.setUnidadeMedida(UnidadeMedida.PCT);
         produto.setValorUnitario(new BigDecimal("21.99"));
@@ -49,7 +49,7 @@ public class Aplicacao {
         itemNota.getProduto().getValorUnitario();
         //ITEM 2
         // Produto
-        produto2.setCodigo("678910fg");
+        produto2.setCodigo("abcd1001");
         produto2.setDescricao("Coca-cola Zero 2L");
         produto2.setUnidadeMedida(UnidadeMedida.LT);
         produto2.setValorUnitario(new BigDecimal("14.95"));
@@ -59,7 +59,7 @@ public class Aplicacao {
         itemNota2.getProduto().getValorUnitario();
         //ITEM 3
         // Produto
-        produto3.setCodigo("123456hh");
+        produto3.setCodigo("abcd1002");
         produto3.setDescricao("Papel Higiénico 12 rolos - folha dupla");
         produto3.setUnidadeMedida(UnidadeMedida.PCT);
         produto3.setValorUnitario(new BigDecimal("16.19"));
@@ -78,6 +78,17 @@ public class Aplicacao {
         nfe.adicionarItem(itemNota);
         nfe.adicionarItem(itemNota2);
         nfe.adicionarItem(itemNota3);
+        // Remove item por codigo
+        nfe.removerItemPorCodigo("abcd1000");
+        //Buscando item por codigo
+        ItemNota itemEncontrado = nfe.buscaItemPorCodigo("abcd1001");
+        if (itemEncontrado != null) {
+            System.out.println(itemEncontrado);
+        } else {
+            System.out.println("Produto não foi encontrado.");
+        }
+        //Alterando item por codigo
+        ItemNota alteraItem = nfe.alterarQuantidadePorCodigo("abcd1001", BigDecimal.valueOf(150));
 
         System.out.println(nfe);
 
